@@ -4,6 +4,8 @@
 * 总是出现"TCP connection reset by peer"的错误
 > 是因为github把master分支重命名为main了。所以当你要push或者pull的时候应写为`git push/pull origin main`
 > 或者在github网站上：settings>>Repositories>>修改默认分支名称
+* 出现"Network file descriptor is not connected"的错误
+> 因为我git push的时候没有加'-u'
 * 建立仓库的步骤
 > 1. 先在github上新建一个仓库 复制仓库地址
 > 2. 在本地：
@@ -40,8 +42,9 @@
 * ##### 如何创建一个链表(List Read())
 > 先定义一个指针，再让这个指针指向malloc出来的节点。（即头节点
 * ####核心代码（List Merge()）
-> `while(p!=NULL&&q!=NULL){
-    if(q->Data>p->Data){
+> \```
+  while(p!=NULL&&q!=NULL){
+   if(q->Data>p->Data){ 
       L->Next=p;
       L=L->Next;
       p=p->Next;                         
@@ -58,4 +61,6 @@
   if(q){
     L->Next=q;      
   }
-`
+\```
+
+
