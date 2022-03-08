@@ -34,4 +34,28 @@
 
 那为啥rmax=0没关系？因为即使右边rmax始终为0，只要左边为负整体就为负。
 * #### 这个递归算法的空间复杂度？
-
+> 每次递归都要存储返回的信息
+> 递归的空间复杂度为每次递归产生的空间复杂度×递归深度。
+## 合并两个有序链表
+* ##### 如何创建一个链表(List Read())
+> 先定义一个指针，再让这个指针指向malloc出来的节点。（即头节点
+* ####核心代码（List Merge()）
+> `while(p!=NULL&&q!=NULL){
+    if(q->Data>p->Data){
+      L->Next=p;
+      L=L->Next;
+      p=p->Next;                         
+    }
+    else{
+      L->Next=q;
+      L=L->Next;
+      q=q->Next;                       
+    }                        
+  }
+  if(p){
+    L->Next=p;                                           
+  }
+  if(q){
+    L->Next=q;      
+  }
+`
