@@ -23,11 +23,11 @@ int main(){
   Polynomial P1,P2,PP,PS;
   P1 = ReadPoly();
   P2 = ReadPoly();
-  PP = Mult(P1,P2);
-  PrintPoly(PP);
+  //PP = Mult(P1,P2);
+  //PrintPoly(PP);
   PS = Add(P1,P2);
   PrintPoly(PS);
-  printf("%d",P1->coef);
+  //printf("%d",P1->coef);
   //PrintPoly(P1);
   //PrintPoly(P2);
   return 0;
@@ -116,16 +116,18 @@ Polynomial Add(Polynomial P1,Polynomial P2){
     if(t1->expon==t2->expon){
       t->coef=t1->coef+t2->coef;
       t->expon=t1->expon;
+      t1=t1->link;t2=t2->link;
     }else if(t1->expon>t2->expon){
       t->coef=t1->coef;
       t->expon=t1->expon;
+      t1=t1->link;
     }else{
       t->coef=t2->coef;
       t->expon=t2->expon;
+      t2=t2->link;
     }
     Rear->link=t;
     Rear=t;
-    t1=t1->link;t2=t2->link;
   }
   if(t1){
     Rear->link=t1;
