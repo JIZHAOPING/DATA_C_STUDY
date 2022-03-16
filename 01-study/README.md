@@ -63,4 +63,9 @@
   }
 \```
 
-
+## 一元多项式的加法与乘法
+* 一直出现前三个测试点段错误最后一个测试点正确的情况
+> 一步步排查，没想到原因会处在while的判断条件中
+> 正确：`while(rear->next&&rear->next->expon>e)`
+> 错误：`while(rear->next->expon>e&&rear->next)`
+> ** 真他妈百思不得其解**
